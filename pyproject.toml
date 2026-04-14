@@ -35,6 +35,24 @@ setup = [
 [tool.uv]
 default-groups = ["dev", "setup"]
 
+[tool.hatch.build.targets.wheel]
+packages = ["agent_server", "scripts"]
+
+[tool.hatch.build.targets.sdist]
+include = [
+    "/agent_server",
+    "/scripts",
+    "/README.md",
+    "/pyproject.toml",
+    "/requirements.txt",
+    "/.env.example",
+    "/AGENTS.md",
+    "/CAPABILITIES_AND_LIMITATIONS.md",
+    "/CLAUDE.md",
+    "/app.yaml",
+    "/databricks.yml",
+    "/e2e-chatbot-app-next",
+]
 
 [project.scripts]
 quickstart = "scripts.quickstart:main"
